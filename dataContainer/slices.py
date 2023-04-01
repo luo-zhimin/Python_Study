@@ -17,3 +17,39 @@
             步长为负数表示，反向取（注意，起始下标和结束下标也要反向标记）
     注意，此操作不会影响序列本身，而是会得到一个新的序列（列表、元组、字符串）
 """
+# 对list进行切片
+my_list = [0, 1, 2, 3, 4, 5, 6, 7]
+slices_list = my_list[1:4]  # step 默认是1 所以可以省略不写
+print(f"结果1：{slices_list}")
+
+# 对tuple进行切片 从头结束到尾结束 step=1
+my_tuple = (1, 2, 3, 4, 5)
+# 起始-结束不写表示从头到尾  step default 1
+slices_tuple = my_tuple[:]
+print(f"结果2：{slices_tuple}")
+# 对str进行切片 step为2
+my_str = "12345678"
+slices_str = my_str[::2]
+print(f"结果3：{slices_str}")
+
+# reserve list tuple str (number need reserve too)
+print(f"结果4：{my_list[::-1]}")
+print(f"结果5：{my_tuple[3:0:-1]}")
+print(f"结果6：{my_str[8:0:-2]}")
+
+"""
+有字符串："万过薪月，员序程马黑来，nohtyP学"
+请使用学过的任何方式，得到 黑马程序员
+"""
+name = "万过薪月，员序程马黑来，nohtyP学"
+name_array = name.split("，")
+new_name = name_array[1]
+slices_name = new_name[0:5]
+print(slices_name)
+index = len(slices_name)
+result = ''
+while index > 0:
+    index -= 1
+    result += slices_name[index]
+
+print(f"result - > {result}")
