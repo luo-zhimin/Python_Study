@@ -42,14 +42,8 @@ print(f"结果6：{my_str[8:0:-2]}")
 请使用学过的任何方式，得到 黑马程序员
 """
 name = "万过薪月，员序程马黑来，nohtyP学"
+print(f"reserve -> {name[::-1]}")
 name_array = name.split("，")
 new_name = name_array[1]
-slices_name = new_name[0:5]
-print(slices_name)
-index = len(slices_name)
-result = ''
-while index > 0:
-    index -= 1
-    result += slices_name[index]
-
-print(f"result - > {result}")
+result = new_name.replace('来', '')
+print(f"result - > {result[::-1]}")
