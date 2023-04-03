@@ -58,7 +58,7 @@ def test_args(*args):
     print(f"args 的类型是{type(args)} ，内容是{args}")
 
 
-# 关键字不定长
+# 关键字不定长 keyword args
 def test_keywords(**kwargs):
     print(f"kwargs 的类型是{type(kwargs)} ，内容是{kwargs}")
 
@@ -68,4 +68,30 @@ test_args('1', 2, 3, True, [12, '3'])
 # dict ==> Map
 test_keywords(name='下', age=11, gender='女', pay=True)
 
-# 匿名函数 inner function
+"""
+    匿名函数 inner function
+    lambda
+        lambda 传入参数: 函数体(一行代码) 若是函数体有多行表达式 不可以使用
+        通过lambda关键字，传入一个一次性使用的lambda匿名函数
+    使用def和使用lambda，定义的函数功能完全一致，只是lambda关键字定义的函数是匿名的，无法二次使用
+"""
+
+
+# 函数作为参数传递 == > 函数嵌套 计算逻辑的传递
+# 计算逻辑的传递，而非数据的传递
+def test_function(compute):
+    result = compute(1, 2)
+    print(f"compute params type {type(compute)}")
+    print(result)
+    return result
+
+
+def compute(x, y):
+    return x + y
+
+
+# inner function
+test_function(compute)
+# lambda
+lambdaResult = test_function(lambda w, z: w + z)
+print(f"lambda compute result {lambdaResult}")
