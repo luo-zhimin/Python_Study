@@ -39,7 +39,7 @@ finally:
     print("一定会执行的代码～")
 
 
-# 异常传递
+# 异常传递 transmit exception
 def fun1():
     print("1 start")
     num = 1 / 0  # zero exception
