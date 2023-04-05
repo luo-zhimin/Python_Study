@@ -7,6 +7,7 @@
 
 
 def print_file_info(file_name):
+    f = None
     try:
         f = open(file_name, 'r')
     except FileNotFoundError as e:
@@ -19,6 +20,7 @@ def print_file_info(file_name):
 
 
 def append_to_file(file_name, data):
+    f = None
     try:
         f = open(file_name, 'a')
     except FileNotFoundError as e:
