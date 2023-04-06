@@ -42,6 +42,7 @@ for province_data in province_data_list:
 country_map = Map()
 country_map.add("各省份确诊人数", result_data, 'china')
 country_map.set_global_opts(
+    # 分段视觉映射
     visualmap_opts=VisualMapOpts(
         is_show=True,  # 是否显示
         is_piecewise=True,  # 是否分段
@@ -56,5 +57,5 @@ country_map.set_global_opts(
     ),
     title_opts=TitleOpts(title="全国疫情地图")
 )
-country_map.render('province.html')
+country_map.render('全国疫情地图.html')
 print(result_data)
